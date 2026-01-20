@@ -1,0 +1,29 @@
+h1 {
+    color: #1b74e4;
+}
+
+#searchbtn {
+    color: white;
+    background-color: black;
+}
+
+.userbtn {
+    background-color: aqua;
+    color: black;
+}
+
+* {
+    font-family: 'Courier New';
+    text-align: center;
+}
+
+#sss {
+    color: blue;
+}
+#search {
+    background-color: azure;
+}
+
+input[type="text"] {
+    color: rgb(122, 17, 17);
+}

@@ -1,0 +1,108 @@
+*{
+    font-family: arial;
+    
+}
+h1,h3{
+    color: brown;
+}
+/* #myid selectors */
+#login{
+    color: brown;
+    background-color: aliceblue;
+    
+
+}
+#signup {
+    color: aliceblue;
+    background-color: brown;
+}
+
+/* .Myclass Selectors */
+.a {
+    color: aliceblue;
+    background-color: green;
+}
+.b {
+    background-color: blueviolet;
+    color: wheat;
+}
+
+
+/* #myid through div madhil <p> */
+#shri p {
+    color: green;
+    font-family: arial;
+    
+}
+
+
+/* descendant selector */
+p a {
+    color: black;
+    background-color: aqua;
+}
+
+
+.nav a{
+    
+    color: rgb(86, 62, 32);
+    
+}
+
+/* silbling combinator + */
+
+p+h3 {
+    text-decoration: double underline;
+}
+
+/* child combinator > */
+
+div>input {
+    background-color: darkgray;
+}
+
+/* Attribute selector */
+
+input[type="text"] {
+    color: red;
+}
+input[type="password"] {
+    color: greenyellow;
+}
+
+/* Hover */
+button:hover {
+    color: white;
+    background-color: black;
+}
+
+h3:hover {
+    text-decoration: none;
+}
+
+/* active */
+button:active {
+    background-color: pink;
+}
+
+p:active {
+    font-weight: 900;
+    color: brown;
+}
+
+/* pseudo element */
+
+/* first letter */
+h1::first-letter {
+    color: blue;
+}
+
+/* first line */
+#shri::first-line {
+    color:chocolate;
+}
+
+/* SELECTION */
+#shri::selection {
+    background-color: cadetblue;
+}
