@@ -6,8 +6,8 @@
     color: brown;
     letter-spacing: 2px;
     background-color:blanchedalmond;
-    height: 200px;
-    width: 30%;
+    height: 400px;
+    width: 10%;
     border-width: 5px;
     border-style: solid;
     border-color: red;
@@ -43,8 +43,8 @@ h1 {
     font-family: arial;
     letter-spacing:2px;
     background-color: aliceblue;
-    height: 200px;
-    width: 20%;
+    height: 400px;
+    width: 10%;
      border-width: 5px;
     border-style: solid;
     border-color: red;
@@ -75,6 +75,10 @@ h1 {
    text-align: center;
    margin: 60px;
    display: inline-block;
+   position: relative;
+   left: 500px;
+   right: 10px;
+   bottom: 1200px;
   
 
     

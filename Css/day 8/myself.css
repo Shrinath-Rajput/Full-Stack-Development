@@ -1,0 +1,21 @@
+.div1 {
+    height: 800px;
+    width: 50%;
+    background-color:rgba(79, 80, 255, 0.2);
+    background-image: url("myphoto.jpeg");
+    background-size: contain;
+    /* position: relative;
+    
+    left: 500px;
+    right: 10px;
+    bottom: 500px; */
+}
+.absolute {
+    height: 800px;
+    width: 50%;
+    position: absolute;
+    left: 500px;
+    right: 200px;
+    
+
+}
