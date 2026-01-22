@@ -14,6 +14,7 @@
     /* background-image: url("myphoto.jpeg");
     background-size: cover; */
     flex-grow: 1;
+    text-transform: uppercase;
     
    
     /* align-items: center;
