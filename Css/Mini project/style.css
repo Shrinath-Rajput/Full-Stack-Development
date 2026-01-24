@@ -1,0 +1,138 @@
+*
+{
+    margin: 0px;
+    padding: 0px;
+
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+
+
+}
+.main_box
+{
+    background-image: url("photo.jpg");
+    /*  #complete screen vr image dakhvaychi aaasel tr  */
+    height: 100vh;
+    background-size: cover;
+    color: aliceblue;
+ 
+}
+a{
+    color: aliceblue;
+    text-decoration: none;
+}
+.btn_one
+{
+    color: aliceblue;
+    font-size: 30px;
+    position: absolute;
+    left:16px;
+    line-height: 60px;
+}
+.sidebar_menu
+{
+    position: absolute;
+    
+    left: -350px; 
+    height: 100vh;
+    width: 300px;
+    background-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 2px 2px 10px rgb(159, 137, 137);
+    
+}
+.sidebar_menu .logo
+{
+    
+    width: 100%;
+    height: 40px;
+    position: absolute;
+    top: 5px;
+    box-shadow: 2px 2px 10px black;
+    padding-top: 5px;
+    margin-top: 10px;
+}
+
+.sidebar_menu .logo a{
+    position: absolute;
+    left: 100px;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 900;
+}
+.sidebar_menu .btn_two
+{
+    position: absolute;
+    color: aliceblue;
+    font-size: 30px;
+    left: 275px;
+    bottom: 1000x;
+    line-height: 60px;
+    opacity: 0;
+   
+}
+.sidebar_menu .menu {
+    position: absolute;
+   
+    width: 100%;
+    top: 80px;
+}
+
+.sidebar_menu .menu li{
+    margin: 10px;
+    padding: 10px;
+}
+
+.sidebar_menu .menu i{
+    padding: 8px;
+}
+.sidebar_menu .social_media
+{
+    position: relative;
+    top: 600px;
+    left: 10px;
+    padding: 10px;
+    margin: 10px;
+    font-size: 20px;
+    font-weight: 900;
+    
+}
+
+.sidebar_menu .social_media i
+{
+    padding: 5px;
+}
+#check
+{
+    display: none;
+}
+
+.sidebar_menu .menu li:hover
+{
+    box-shadow:  2px 2px 10px black;
+}
+.sidebar_menu .social_media i:hover
+{
+ opacity: 1;
+ transform: scale(2);
+}
+
+/* imp checkbox vr check kr tr menu bar show honar */
+#check:checked ~ .sidebar_menu
+{
+    left: 0;
+}
+
+#check:checked ~ .btn_one
+{
+    opacity: 0;
+}
+
+
+#check:checked ~ .sidebar_menu .btn_two
+{
+    opacity: 1;
+}
