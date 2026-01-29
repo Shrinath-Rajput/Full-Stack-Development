@@ -1,0 +1,19 @@
+.container
+{
+    background-color: bisque;
+    height: 100vh;
+    padding-top: 200px;
+    margin-top: 100px;
+    border-radius: 30%;
+
+}
+.button
+{
+    position: relative;
+    left: 600px;
+}
+
+.row
+{
+    border-radius: 20%;
+}
