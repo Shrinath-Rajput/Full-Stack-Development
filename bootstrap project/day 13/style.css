@@ -347,6 +347,7 @@ a{
     display: flex;
     justify-content: center;
     align-items: center;
+    
 }
 .control #control-pic-1
 {
@@ -356,4 +357,17 @@ a{
 .control #control-pic-2
 {
     opacity: 0.5;
+}
+
+.control
+{
+    opacity: 0.7;
+}
+.control:hover{
+    opacity: 1;
+}
+
+.control #range
+{
+    background-color: #ddd;
 }
