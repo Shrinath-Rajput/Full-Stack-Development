@@ -1,0 +1,18 @@
+1. Introduction of Javascript
+2. Using console
+3. Variables
+4. Datatype
+5. Numbers in Javascript
+6. Oprations 
+7. NaN Concepts
+8. Operator Precedence
+9. let, const & var Keywords
+10. Assignments Operator
+11. Unary Operator
+12. Identifier Rules
+13. Boolean in Javascript
+14. What is Typescript
+15. String
+16. String Index
+17. Null & undefined in JS
+18. Pratice Question
