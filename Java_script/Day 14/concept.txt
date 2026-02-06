@@ -1,3 +1,5 @@
+#Day 14
+#Level 1 :
 1. Introduction of Javascript
 2. Using console
 3. Variables
@@ -16,3 +18,18 @@
 16. String Index
 17. Null & undefined in JS
 18. Pratice Question
+
+#level2 :
+
+1.Console.log()
+2.Linking JS file
+3.Template literals
+4.Operator
+5.Conditional Statements
+6.Nested If-Else
+7.Switch Statements
+8.Alerts and Prompt
+9.Pratice Question
+
+
+

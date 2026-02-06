@@ -1,0 +1,23 @@
+.shri
+{
+    text-align: center;
+    background-color: aliceblue;
+    color:blueviolet ;
+    padding: 10px;
+    margin: 10px;
+    border: 2px solid black;
+    border-radius: 15px;
+    box-shadow: 2px 2px 10px black;
+}
+
+*
+{
+    background-color:antiquewhite;
+}
+
+@media(min-width:284px)
+{
+    .shri{
+        background-color: brown;
+    }
+}
