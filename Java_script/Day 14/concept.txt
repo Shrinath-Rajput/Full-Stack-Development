@@ -53,5 +53,22 @@
 
 #level 5
 
+object literals
+
+1.Create Object literals
+2.Get values
+3.add/update values
+4.loop in Array
+5.Math Object
+6.Math Methods
+
+#level 6 
+Functions
+1.Functions
+2.function with arguments
+3.Return Keywords
+4.scope
+global,functionj,block,lexical etc
+
 
 
