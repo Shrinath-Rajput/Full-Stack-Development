@@ -70,5 +70,12 @@ Functions
 4.scope
 global,functionj,block,lexical etc
 
+#level 6
 
-
+1.This Keywords
+2.try and catch
+3.Miscellaneous Topics
+    1.Arrow Functions
+    2.settimeout
+    3.setintervals
+    4.this Keywords for Arrow function
