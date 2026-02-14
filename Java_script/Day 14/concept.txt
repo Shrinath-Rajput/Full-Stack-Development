@@ -82,3 +82,12 @@ global,functionj,block,lexical etc
 
 
 #level 8
+1.Array Methods 
+    1.For Each()
+    2.Map Function()
+    3.Filter Function()
+    4.Every Method ()
+    5.Some Function()
+    6.reduce function()
+    7.Spread Function()
+    8.Rest Function()
