@@ -91,3 +91,33 @@ global,functionj,block,lexical etc
     6.reduce function()
     7.Spread Function()
     8.Rest Function()
+
+#Level 9
+Very Imp
+1.DOM .
+2.SelectingElementsbyId
+3.SelectingElementsbyClass
+4.SelectingElementsbyTagName
+5.Query Selectors
+6.Manipulication
+    1.Inner Text
+    2.Outer Text
+    3.Inner Html
+7.Manipulating Attributes
+    1.obj.getAttributes(attr)
+    2.obj.setAttribute(att,val)
+8.Mnipulating Style 
+Style property
+obj.Style
+9.Manipulating Style
+using class literals
+obj.classlist
+10.Navigation
+11.Adding Elements
+    documents.createElements('p)
+    appendchild(elements)
+    append(element)
+    prepend(element)
+    insertAdjacent(where,element)
+    Removechild(element)
+    remove(element)
