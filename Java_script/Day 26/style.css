@@ -1,0 +1,15 @@
+h1{
+    text-align: center;
+    background-color: antiquewhite;
+    font-size: 60px;
+    padding: 10px;
+    letter-spacing: 4px;
+    margin: 10px;
+    border: 2px solid black;
+    box-shadow: 2px 2px 10px black;
+
+}
+*
+{
+    background-color: azure;
+}

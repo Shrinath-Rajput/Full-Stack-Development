@@ -146,3 +146,7 @@ Level 10 23file
     then(),catch()
 6.promises chaining
 
+
+#level 12
+1.Async function
+2.Await Keywords
