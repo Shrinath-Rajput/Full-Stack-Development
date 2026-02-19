@@ -1,0 +1,70 @@
+body{
+    text-align: center;
+}
+.btn
+{
+    height: 200px;
+    width: 200px;
+    border-radius: 20px;
+    border: 2px solid black;
+}
+.container{
+    display: flex;
+    justify-content: center;
+}
+.btn{
+    margin: 20px;
+    padding: 20px;
+    
+}
+.red1
+{
+    background-color: red;
+    border: 2px solid black;
+    box-shadow: 2px 2px 10px black;
+}
+.yellow1
+{
+    background-color: yellow;
+    border: 2px solid black;
+    box-shadow: 2px 2px 10px black;
+}
+.blue1
+{
+    background-color:blue;
+    border: 2px solid black;
+    box-shadow: 2px 2px 10px black;
+}
+.green1
+{
+    background-color:green;
+    border: 2px solid black;
+    box-shadow: 2px 2px 10px black;
+}
+.one{
+    background-color: bisque;
+    margin: 10px;
+    padding: 10px;
+    border: 2px solid black;
+    box-shadow: 2px 2px 10px black;
+}
+.two
+{
+    background-color:antiquewhite;
+    margin: 10px;
+    margin-left: 160px;
+    margin-right: 160px;
+    padding: 10px;
+    border: 2px solid black;
+    box-shadow: 2px 2px 10px black;
+
+}
+.flash {
+    background-color: white !important;
+    opacity: 0.6;
+}
+.uerflash
+{
+    background-color: brown;
+    opacity: 0.6;
+}
