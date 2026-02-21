@@ -150,3 +150,17 @@ Level 10 23file
 #level 12
 1.Async function
 2.Await Keywords
+3.API 
+    request.response
+4.what is json file
+5.json file Method
+    parse Method
+    stringify Method
+6.Tesing api tools
+     1.Hoppscoth
+     2.postman
+7.Ajax
+8.Https verbs
+9.Ststrus code
+10.Https Header
+11.First request using Fetch Method
