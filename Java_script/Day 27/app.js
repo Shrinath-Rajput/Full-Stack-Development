@@ -68,3 +68,35 @@ async function showimg() {
     return `Error is Founded ${e}`;
 }
 }
+
+
+// get collages
+let url3="http://universities.hipolabs.com/search?name=";
+let country="Nepal";
+
+
+let btn1=document.querySelector('.hello');
+btn1.addEventListener('click',async()=>
+    
+{
+    let country=document.querySelector("input").value;
+    console.log(country);
+     await getcollage(country);
+
+})
+
+
+
+
+
+
+async function getcollage(country)
+{
+    try{
+        let links=await axios.get(url3+country);
+        console.log(links);
+
+    }catch (e){
+        console.log(`error is${e}`);
+    }
+}
