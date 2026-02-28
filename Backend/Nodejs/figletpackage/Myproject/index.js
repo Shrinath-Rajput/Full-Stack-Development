@@ -1,0 +1,1 @@
+import randomWord from 'random-word';

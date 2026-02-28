@@ -1,0 +1,17 @@
+{
+  "name": "srrajput",
+  "version": "1.0.0",
+  "description": "this is my first package",
+  "license": "ISC",
+  "author": "Shrinath Rajput",
+  "type": "commonjs",
+  "main": "index.js",
+  "text":"module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "random": "^5.4.1",
+    "random-word": "^3.0.0"
+  }
+}

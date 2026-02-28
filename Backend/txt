@@ -1,0 +1,19 @@
+// ##Node js
+
+
+// 1.What is node.js
+// 2.node REPL
+// 3.node file
+//     node file.js
+// 4.process
+// 5.process.argv
+// 6.module.export
+//     require 
+
+// Very Imp 
+
+// NPM (Node Package Manager)
+// #installing package 
+//     npm  install packagename
+
+//     import package 
