@@ -17,3 +17,16 @@
 //     npm  install packagename
 
 //     import package 
+
+
+// EXPRESS 
+
+// 1.What is EXPRESS
+// 2.How to Create a API 
+// 3.app.listen 
+// 4.port 
+// 5.How to send the response 
+// 6.Routing 
+// 7.Nodemon 
+// 8.Path Parameter 
+// 9.Query String 

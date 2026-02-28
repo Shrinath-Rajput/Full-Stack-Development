@@ -44,9 +44,24 @@ app.get("/contact",(req,res)=>
     res.send(code3);
 });
 
+// path parameter 
+app.get("/:username",(req,res)=>
+{
+    let {username}=req.params;
+    res.send(`Hello save the usename @${username}`);
+})
+
+// Query Search
+app.get("/search",(req,res)=>
+{
+    let {q}=req.query;
+    res.send(`Result is good:${q} `);
+});
+
+
 
 // Kayam End la thevaych  route nasel aani dusra route call kela tr filenot funded show hoel 
 app.use((req,res)=>
 {
-    res.status(402).send("FIle not founded");
+    res.status(402).send("FIle is not match and founded");
 });
