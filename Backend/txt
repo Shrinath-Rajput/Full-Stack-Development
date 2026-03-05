@@ -1,5 +1,7 @@
 // ##Node js
 
+import { Dir } from "node:fs"
+
 
 // 1.What is node.js
 // 2.node REPL
@@ -30,3 +32,15 @@
 // 7.Nodemon 
 // 8.Path Parameter 
 // 9.Query String 
+
+
+// EJS Template 
+
+// What is EJS 
+//  2.using Ejs 
+//      render------send the file 
+
+// 3.View Dir
+
+//     const path=require("path")
+//     app.set("views",path.join(__dirname,views));

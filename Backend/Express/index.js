@@ -44,11 +44,28 @@ app.get("/contact",(req,res)=>
     res.send(code3);
 });
 
+app.get("/figlet1",(req,res)=>
+{
+    const figlet = require('figlet');
+
+figlet("Hello World!!", function (err, data) {
+  if (err) {
+    console.log("Something went wrong...");
+    console.dir(err);
+    return;
+  }
+  console.log(data);
+});
+app.send(figlet);
+});
+
+
+
 // path parameter 
 app.get("/:username",(req,res)=>
 {
     let {username}=req.params;
-    res.send(`Hello save the usename @${username}`);
+    res.send(`<h1> ${username} </h1>  @${username}`);
 })
 
 // Query Search
@@ -65,3 +82,5 @@ app.use((req,res)=>
 {
     res.status(402).send("FIle is not match and founded");
 });
+
+
