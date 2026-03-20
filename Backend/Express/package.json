@@ -1,7 +1,10 @@
 {
-  "name": "expressdir",
+  "name": "shri",
   "version": "1.0.0",
   "description": "express package",
+  "keywords": [
+    "abc"
+  ],
   "license": "ISC",
   "author": "Shrinath Rajput",
   "type": "commonjs",
@@ -11,6 +14,8 @@
   },
   "dependencies": {
     "express": "^5.2.1",
-    "figlet": "^1.10.0"
-  }
+    "figlet": "^1.10.0",
+    "seque": "^1.2.1"
+  },
+  "devDependencies": {}
 }
