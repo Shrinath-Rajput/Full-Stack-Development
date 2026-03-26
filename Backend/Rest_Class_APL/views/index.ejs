@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create a API First Time</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Create A First Time API's</h1>
+    <% for (post of posts){%>
+        <div class="dive1">
+            <h3 id="user"> @<%= post.Name %></h3>
+            <h4 id="commet"> <%= post.Comment1 %></h4>
+        </div>
+        
+    <%}%>
+</body>
+</html>
