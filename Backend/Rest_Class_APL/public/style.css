@@ -15,6 +15,11 @@ h1{
     border: 2px solid black;
     box-shadow: 2px 2px 10px black;
     border-radius: 15px;
+    opacity: 0.8;
+
+}
+.dive1:hover{
+    background-color: darkgray;
 }
 
 #user
@@ -24,4 +29,35 @@ h1{
     font-weight:bolder;
     font-style: italic;
   
+}
+
+#button1
+{
+    text-align: center;
+}
+
+/* Show EJs file */
+
+body
+{
+    background-color:darkgray;
+}
+.card
+{
+    background-color: brown;
+   
+    margin: 50px auto;
+    padding: 40px;
+    opacity: 1;
+    box-shadow: 2px 2px 10px black;
+}
+.card:hover{
+    background-color:black;
+}
+.king
+{
+    color: aliceblue;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 100;
+    font-style: italic;
 }
