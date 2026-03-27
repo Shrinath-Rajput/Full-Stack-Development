@@ -7,9 +7,12 @@ const path=require("path");
 const { v4: uuidv4 } = require("uuid");
 // uuidv4(); // ⇨ '9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d'
 
+const methodOverride=require("method-override")
+
 // Middleware (IMPORTANT)
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(methodOverride('_method'))
 
 app.set("view engine","ejs");
 app.set("views",path.join(__dirname,"views"));
@@ -83,12 +86,18 @@ app.patch("/posts/:id",(req,res)=>
     let post=posts.find((p)=>id===p.id);
     post.Comment1=newComment1;
     console.log(post);
-    res.send("Comment1 Updated");
+    res.redirect("/posts");
     
+});
+
+
+// edit infomartion
+app.get("/posts/:id/update",(req,res)=>
+{
+    let {id}=req.params;
+    let post=posts.find((p)=>id===p.id);
+    res.render("update.ejs",{post})
 })
-
-
-
 
 
 
