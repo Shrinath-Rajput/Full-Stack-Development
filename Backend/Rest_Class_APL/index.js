@@ -99,7 +99,13 @@ app.get("/posts/:id/update",(req,res)=>
     res.render("update.ejs",{post})
 })
 
-
+// Delete Post
+app.delete("/posts/:id",(req,res)=>
+{
+    let {id}=req.params;
+    posts=posts.filter((p)=>id!==p.id);
+    res.redirect("/posts");
+})
 
 
 
