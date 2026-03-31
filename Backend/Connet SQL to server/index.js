@@ -115,7 +115,112 @@ app.get("/users",(req,res)=>
     }
 })
 
+// Get Single User for Editing
+app.get("/users/:id",(req,res)=>
+{
+    let q=`select * from user where id = ?`;
+    try{
+        connection.query(q,[req.params.id],(err,result)=>
+        {
+            if (err) throw err;
+            if (result.length === 0) {
+                return res.status(404).send("User not found");
+            }
+            console.log(result);
+            res.render("edit",{user:result[0]});
+        })
+    }catch(err){
+        console.log(err);
+        res.status(500).send("Error from database")
+    }
+})
 
+// Update User
+app.put("/users/:id",(req,res)=>
+{
+    let q=`update user set name = ?, email = ?, password = ? where id = ?`;
+    try{
+        connection.query(q,[req.body.name, req.body.email, req.body.password, req.params.id],(err,result)=>
+        {
+            if (err) {
+                console.log(err);
+                return res.status(500).send("Error updating user");
+            }
+            console.log("User updated:", result);
+            res.redirect("/users");
+        })
+    }catch(err){
+        console.log(err);
+        res.status(500).send("Error from database")
+    }
+})
+
+//edit page
+app.get("/users/:id/edit", (req, res) => {
+    let { id } = req.params;
+     
+     let q=`SELECT * FROM user WHERE id ='${id}'`;
+    connection.query(q, (err, result) => {
+       
+        if (err) throw err;
+
+        res.render("edit", { user: result[0] }); 
+    });
+});
+
+//delete page
+app.delete("/users/:id", (req, res) => {
+    let { id } = req.params;
+
+    console.log("DELETE ID:", id); // 👈 ADD
+
+    let q = "DELETE FROM user WHERE id = ?";
+
+    connection.query(q, [id], (err, result) => {
+        if (err) {
+            console.log("DB ERROR:", err); // 👈 ADD
+            return res.json({ success: false });
+        }
+
+        console.log("RESULT:", result); // 👈 ADD
+
+        res.json({ success: true });
+    });
+});
+
+/// addd page
+// open form
+app.get("/users/new", (req, res) => {
+    res.render("add");
+});
+
+// add user
+app.get("/users/new", (req, res) => {
+    res.render("add"); // तुझा हा HTML ejs मध्ये convert कर
+});
+
+app.post("/users", (req, res) => {
+    let { name, email, password } = req.body;
+
+    console.log("DATA:", req.body); // 👈 check
+
+    let q = "INSERT INTO user(name,email,password) VALUES (?, ?, ?)";
+
+    connection.query(q, [name, email, password], (err, result) => {
+        if (err) {
+            console.log(err);
+
+            if (err.code === "ER_DUP_ENTRY") {
+                return res.send("Email already exists ❌");
+            }
+
+            return res.send("Error ❌");
+        }
+
+        console.log("Inserted:", result);
+        res.redirect("/users"); // success
+    });
+});
 app.listen(port,()=>
 {
     console.log(`App Is Listen to EveryThing ${port}`)

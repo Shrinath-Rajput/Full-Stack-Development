@@ -354,9 +354,18 @@
 
             <!-- Search Section -->
             <div class="search-section">
-                <div class="input-group">
-                    <input type="text" id="searchInput" class="form-control form-control-lg" placeholder="🔍 Search by name, email, or ID...">
-                    <button class="btn btn-secondary" type="button">Search</button>
+                <div class="row g-2 align-items-center">
+                    <div class="col-md-9">
+                        <div class="input-group">
+                            <input type="text" id="searchInput" class="form-control form-control-lg" placeholder="🔍 Search by name, email, or ID...">
+                            <button class="btn btn-secondary" type="button">Search</button>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <a href="/users/new" class="btn btn-success btn-lg w-100">
+                            <i class="fas fa-plus"></i> Add New User
+                        </a>
+                    </div>
                 </div>
             </div>
 
@@ -404,9 +413,9 @@
                                         </a>
                                     </td>
                                     <td>
-                                        <button class="action-btn btn-edit" onclick="editUser(<%= user.id %>)" title="Edit User">
+                                        <a href="/users/<%= user.id %>" class="action-btn btn-edit" title="Edit User">
                                             <i class="fas fa-edit"></i> Edit
-                                        </button>
+                                        </a>
                                         <button class="action-btn btn-delete" onclick="deleteUser(<%= user.id %>, '<%= user.name %>')" title="Delete User">
                                             <i class="fas fa-trash"></i> Delete
                                         </button>
@@ -461,8 +470,50 @@
         function deleteUser(userId, userName) {
             const confirmed = confirm(`Are you sure you want to delete the user "${userName}"? This action cannot be undone.`);
             if (confirmed) {
-                alert('🗑️ Delete functionality coming soon! User ID: ' + userId);
-                // You can add delete route here later
+                // Show loading state
+                const btn = event.target.closest('button');
+                btn.disabled = true;
+                btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Deleting...';
+
+                // Send DELETE request
+                fetch(`/users/${userId}`, {
+                    method: 'DELETE',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        // Remove row from table with animation
+                        const row = document.querySelector(`tr[data-user-id="${userId}"]`);
+                        row.style.transition = 'all 0.3s ease';
+                        row.style.opacity = '0';
+                        row.style.transform = 'translateX(-100%)';
+                        
+                        setTimeout(() => {
+                            row.remove();
+                            showNotification(`✅ User "${userName}" deleted successfully!`, 'success');
+                            
+                            // Update total users count
+                            const totalUsersCount = document.querySelector('.stat-number');
+                            if (totalUsersCount) {
+                                const currentCount = parseInt(totalUsersCount.textContent);
+                                totalUsersCount.textContent = currentCount - 1;
+                            }
+                        }, 300);
+                    } else {
+                        showNotification(`❌ Failed to delete user: ${data.message}`, 'danger');
+                        btn.disabled = false;
+                        btn.innerHTML = '<i class="fas fa-trash"></i> Delete';
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    showNotification('❌ Error deleting user', 'danger');
+                    btn.disabled = false;
+                    btn.innerHTML = '<i class="fas fa-trash"></i> Delete';
+                });
             }
         }
 
