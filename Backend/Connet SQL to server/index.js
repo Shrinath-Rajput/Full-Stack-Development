@@ -14,6 +14,27 @@ connection.query("show tables",(err,result)=>
 }catch(err){
     console.log(err);
 }
+
+//insert new data
+let inser="Insert into user(id,name,email,password)values ? ";
+// let user=["1","Shri@123","rajputshri@gmail.com","123"];
+let users=[
+    ["11","Shri@12312","rajputshri18@gmail.com","12318"],
+    ["2","Shri@123456","rajputshri123@gmail.com","123456"],
+    ["3","Shri@123768","rajputshri321@gmail.com","123987"],
+    ["4","Shri@12399","rajputshri111@gmail.com","12399"]
+];
+
+try{
+connection.query(inser,[users],(err,result)=>
+{   
+    if(err) throw err;
+    console.log(result);
+});
+}catch(err){
+    console.log(err);
+}
+
 connection.end();
 
 // ============================================
