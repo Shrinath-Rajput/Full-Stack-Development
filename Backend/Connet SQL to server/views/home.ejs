@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome - Professional Dashboard</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --light-bg: #ecf0f1;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+        }
+
+        /* Navbar */
+        .navbar {
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            background-color: var(--primary-color) !important;
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: white !important;
+        }
+
+        .nav-link {
+            color: rgba(255, 255, 255, 0.8) !important;
+            transition: all 0.3s ease;
+            margin-left: 10px;
+        }
+
+        .nav-link:hover {
+            color: var(--secondary-color) !important;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            top: -50px;
+            right: -50px;
+        }
+
+        .hero-section::after {
+            content: '';
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            bottom: -50px;
+            left: -50px;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+
+        .btn-primary-custom {
+            background-color: var(--accent-color);
+            border: none;
+            padding: 12px 35px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary-custom:hover {
+            background-color: #c0392b;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(231, 76, 60, 0.3);
+        }
+
+        .btn-secondary-custom {
+            background-color: transparent;
+            border: 2px solid white;
+            color: white;
+            padding: 10px 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary-custom:hover {
+            background-color: white;
+            color: var(--secondary-color);
+        }
+
+        /* Features Section */
+        .features-section {
+            padding: 80px 0;
+            background-color: #f8f9fa;
+        }
+
+        .features-section h2 {
+            text-align: center;
+            margin-bottom: 60px;
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+
+        .feature-card {
+            text-align: center;
+            padding: 30px;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            background: white;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+        }
+
+        .feature-card:hover {
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+        }
+
+        .feature-card h4 {
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .feature-card p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        /* Stats Section */
+        .stats-section {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .stat-item p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background-color: var(--light-bg);
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            color: var(--primary-color);
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .cta-section p {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 40px 0 20px;
+        }
+
+        footer h5 {
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        footer a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: var(--secondary-color);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 30px;
+            padding-top: 20px;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .social-links {
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: var(--secondary-color);
+            border-radius: 50%;
+            line-height: 40px;
+            margin-right: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background-color: var(--accent-color);
+            transform: scale(1.1);
+        }
+
+        /* Refresh Button */
+        #refreshBtn {
+            background-color: white !important;
+            color: var(--primary-color) !important;
+            font-weight: 600;
+            border: 2px solid white;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+        }
+
+        #refreshBtn:hover {
+            background-color: var(--accent-color) !important;
+            color: white !important;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        #refreshBtn:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+        }
+
+        #totalUsers {
+            transition: all 0.6s ease;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#"><i class="fas fa-code"></i> ProApp</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Welcome to ProApp</h1>
+                <p class="hero-subtitle">Build amazing applications with our professional platform</p>
+                <div>
+                    <button class="btn btn-primary-custom me-3">Get Started</button>
+                    <button class="btn btn-secondary-custom">Learn More</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section" id="features">
+        <div class="container">
+            <h2>Why Choose Us?</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <h4>Lightning Fast</h4>
+                        <p>Experience blazing fast performance with our optimized platform built for speed and efficiency.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h4>Highly Secure</h4>
+                        <p>Enterprise-grade security with encryption and compliance standards to protect your data.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <h4>24/7 Support</h4>
+                        <p>Our dedicated support team is always ready to help you succeed with our platform.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h4>Real-time Analytics</h4>
+                        <p>Track your progress with detailed analytics and comprehensive reporting tools.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h4>Responsive Design</h4>
+                        <p>Works perfectly on all devices - desktop, tablet, and mobile platforms.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-plug"></i>
+                        </div>
+                        <h4>Easy Integration</h4>
+                        <p>Integrate with your favorite tools and services seamlessly and quickly.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section with Total Users -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="stat-item">
+                        <h3 id="totalUsers"><%= result %></h3>
+                        <p>Total Users</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="stat-item">
+                        <h3>150+</h3>
+                        <p>Countries</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="stat-item">
+                        <h3>99.9%</h3>
+                        <p>Uptime</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="stat-item">
+                        <h3>1M+</h3>
+                        <p>Data Points</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-12 text-center">
+                    <button id="refreshBtn" class="btn btn-light btn-lg" onclick="refreshUserCount()">
+                        <i class="fas fa-sync-alt"></i> Refresh User Count
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" id="contact">
+        <div class="container">
+            <h2>Ready to Get Started?</h2>
+            <p>Join thousands of satisfied customers who trust ProApp</p>
+            <form class="row justify-content-center g-3" style="max-width: 500px; margin: 0 auto;">
+                <div class="col-12">
+                    <input type="email" class="form-control form-control-lg" placeholder="Enter your email" required>
+                </div>
+                <div class="col-12">
+                    <button type="submit" class="btn btn-primary-custom w-100">Sign Up Now</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <h5>About Us</h5>
+                    <p>ProApp is a leading platform for building professional applications with cutting-edge technology.</p>
+                    <div class="social-links">
+                        <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <h5>Product</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Features</a></li>
+                        <li><a href="#">Pricing</a></li>
+                        <li><a href="#">Security</a></li>
+                        <li><a href="#">Roadmap</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>Company</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Press</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>Legal</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 ProApp. All rights reserved. | Built with <i class="fas fa-heart" style="color: var(--accent-color);"></i> by Your Team</p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="div5">
+        <h2>The total No of Users :</h2>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Function to refresh user count
+        function refreshUserCount() {
+            const btn = document.getElementById('refreshBtn');
+            btn.disabled = true;
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Refreshing...';
+
+            fetch('/')
+                .then(response => response.text())
+                .then(html => {
+                    // Parse the HTML to extract the user count
+                    const parser = new DOMParser();
+                    const newDoc = parser.parseFromString(html, 'text/html');
+                    const newCount = newDoc.getElementById('totalUsers').textContent;
+                    
+                    // Update the count with animation
+                    const userElement = document.getElementById('totalUsers');
+                    userElement.style.transition = 'all 0.6s ease';
+                    userElement.style.transform = 'scale(1.2)';
+                    userElement.style.color = '#e74c3c';
+                    
+                    setTimeout(() => {
+                        userElement.textContent = newCount;
+                        userElement.style.transform = 'scale(1)';
+                        userElement.style.color = 'white';
+                    }, 300);
+
+                    // Reset button
+                    btn.disabled = false;
+                    btn.innerHTML = '<i class="fas fa-sync-alt"></i> Refresh User Count';
+                    
+                    // Show success message
+                    showAlert('✅ User count updated!', 'success');
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    btn.disabled = false;
+                    btn.innerHTML = '<i class="fas fa-sync-alt"></i> Refresh User Count';
+                    showAlert('❌ Failed to refresh user count', 'danger');
+                });
+        }
+
+        // Alert function
+        function showAlert(message, type) {
+            const alertDiv = document.createElement('div');
+            alertDiv.className = `alert alert-${type} alert-dismissible fade show position-fixed`;
+            alertDiv.style.top = '20px';
+            alertDiv.style.right = '20px';
+            alertDiv.style.zIndex = '9999';
+            alertDiv.style.minWidth = '300px';
+            alertDiv.innerHTML = `
+                ${message}
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            `;
+            document.body.appendChild(alertDiv);
+            
+            setTimeout(() => {
+                alertDiv.remove();
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
