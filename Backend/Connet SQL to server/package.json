@@ -1,0 +1,16 @@
+{
+  "name": "connet-sql-to-server",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "shrinath rajput",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@faker-js/faker": "^8.0.0"
+  },
+  "devDependencies": {}
+}
