@@ -115,6 +115,35 @@ app.get("/users",(req,res)=>
     }
 })
 
+// Show Add User Form - MUST BE BEFORE :id route
+app.get("/users/new", (req, res) => {
+    res.render("add");
+});
+
+// Add New User to Database
+app.post("/users", (req, res) => {
+    let { name, email, password } = req.body;
+
+    console.log("DATA:", req.body);
+
+    let q = "INSERT INTO user(name,email,password) VALUES (?, ?, ?)";
+
+    connection.query(q, [name, email, password], (err, result) => {
+        if (err) {
+            console.log(err);
+
+            if (err.code === "ER_DUP_ENTRY") {
+                return res.send("Email already exists ❌");
+            }
+
+            return res.send("Error ❌");
+        }
+
+        console.log("Inserted:", result);
+        res.redirect("/users");
+    });
+});
+
 // Get Single User for Editing
 app.get("/users/:id",(req,res)=>
 {
@@ -159,11 +188,13 @@ app.put("/users/:id",(req,res)=>
 app.get("/users/:id/edit", (req, res) => {
     let { id } = req.params;
      
-     let q=`SELECT * FROM user WHERE id ='${id}'`;
-    connection.query(q, (err, result) => {
+    let q = `SELECT * FROM user WHERE id = ?`;
+    connection.query(q, [id], (err, result) => {
        
         if (err) throw err;
-
+        if (result.length === 0) {
+            return res.status(404).send("User not found");
+        }
         res.render("edit", { user: result[0] }); 
     });
 });
@@ -188,39 +219,7 @@ app.delete("/users/:id", (req, res) => {
     });
 });
 
-/// addd page
-// open form
-app.get("/users/new", (req, res) => {
-    res.render("add");
-});
 
-// add user
-app.get("/users/new", (req, res) => {
-    res.render("add"); // तुझा हा HTML ejs मध्ये convert कर
-});
-
-app.post("/users", (req, res) => {
-    let { name, email, password } = req.body;
-
-    console.log("DATA:", req.body); // 👈 check
-
-    let q = "INSERT INTO user(name,email,password) VALUES (?, ?, ?)";
-
-    connection.query(q, [name, email, password], (err, result) => {
-        if (err) {
-            console.log(err);
-
-            if (err.code === "ER_DUP_ENTRY") {
-                return res.send("Email already exists ❌");
-            }
-
-            return res.send("Error ❌");
-        }
-
-        console.log("Inserted:", result);
-        res.redirect("/users"); // success
-    });
-});
 app.listen(port,()=>
 {
     console.log(`App Is Listen to EveryThing ${port}`)
